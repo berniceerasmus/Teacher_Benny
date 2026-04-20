@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Benny – Your English Journey Starts Here</title>
+<style>
+  :root {
+    --teal: #2A7F7F;
+    --teal-dark: #1d5c5c;
+    --teal-light: #e8f5f5;
+    --teal-mid: #5DCAA5;
+    --green: #3AAA7A;
+    --green-dark: #2a7a57;
+    --dark: #2C3E50;
+    --grey: #6b7a8d;
+    --light: #f7fbfb;
+    --white: #ffffff;
+    --border: #c8e6e6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--dark); background: var(--white); line-height: 1.7; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+    backdrop-filter: blur(8px);
+  }
+  .nav-brand { display: flex; flex-direction: column; }
+  .nav-brand strong { font-size: 1.25rem; color: var(--teal); font-weight: 700; letter-spacing: -0.3px; }
+  .nav-brand span { font-size: 0.7rem; color: var(--grey); font-style: italic; margin-top: -2px; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-cta {
+    background: var(--teal); color: white; border: none;
+    padding: 0.55rem 1.3rem; border-radius: 25px;
+    font-size: 0.9rem; font-weight: 600; cursor: pointer;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--teal-dark); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1d5c5c 0%, #2A7F7F 45%, #3AAA7A 100%);
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 6rem 2rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-content { position: relative; max-width: 780px; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+    color: white; border-radius: 25px;
+    padding: 0.4rem 1.1rem; font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.5px; margin-bottom: 1.5rem;
+  }
+  .hero h1 { font-size: 3.4rem; color: white; font-weight: 700; line-height: 1.15; margin-bottom: 0.5rem; }
+  .hero h1 span { color: #a8edca; }
+  .hero-tagline { font-size: 1.15rem; color: rgba(255,255,255,0.85); margin-bottom: 0.8rem; font-style: italic; }
+  .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,0.75); max-width: 560px; margin: 0 auto 2.5rem; }
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+  .btn-primary {
+    background: white; color: var(--teal);
+    padding: 0.85rem 2rem; border-radius: 30px;
+    font-weight: 700; font-size: 1rem; text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.2); }
+  .btn-outline {
+    background: transparent; color: white;
+    border: 2px solid rgba(255,255,255,0.6);
+    padding: 0.85rem 2rem; border-radius: 30px;
+    font-weight: 600; font-size: 1rem; text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.15); border-color: white; }
+  .hero-stats { display: flex; gap: 2.5rem; justify-content: center; flex-wrap: wrap; }
+  .hero-stat { text-align: center; }
+  .hero-stat strong { display: block; font-size: 1.8rem; color: white; font-weight: 700; line-height: 1; }
+  .hero-stat span { font-size: 0.8rem; color: rgba(255,255,255,0.72); }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 1.5px; color: var(--teal); text-transform: uppercase; margin-bottom: 0.6rem; }
+  .section-title { font-size: 2.1rem; font-weight: 700; color: var(--dark); margin-bottom: 1rem; line-height: 1.2; }
+  .section-sub { font-size: 1.05rem; color: var(--grey); max-width: 580px; margin-bottom: 3rem; }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .about-avatar {
+    width: 220px; height: 220px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal), var(--green));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 5rem; margin: 0 auto 1.5rem;
+    box-shadow: 0 12px 40px rgba(42,127,127,0.3);
+  }
+  .about-left { text-align: center; }
+  .about-name { font-size: 1.5rem; font-weight: 700; color: var(--teal); }
+  .about-role { color: var(--grey); font-size: 0.95rem; margin-bottom: 1rem; }
+  .about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1rem; }
+  .tag {
+    background: var(--teal-light); color: var(--teal-dark);
+    border: 1px solid var(--border); border-radius: 20px;
+    padding: 0.3rem 0.85rem; font-size: 0.82rem; font-weight: 600;
+  }
+  .about-right p { color: var(--grey); font-size: 1rem; margin-bottom: 1rem; }
+  .check-list { list-style: none; }
+  .check-list li { display: flex; align-items: flex-start; gap: 0.7rem; color: var(--dark); font-size: 0.95rem; margin-bottom: 0.6rem; }
+  .check-list li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+  /* SPECIALITIES */
+  .spec-bg { background: var(--light); }
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .spec-card {
+    background: white; border: 1.5px solid var(--border); border-radius: 16px;
+    padding: 2rem; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .spec-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(42,127,127,0.12); }
+  .spec-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+  .spec-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--teal); margin-bottom: 0.5rem; }
+  .spec-card p { color: var(--grey); font-size: 0.92rem; }
+  .spec-card .spec-age { display: inline-block; background: var(--teal-light); color: var(--teal-dark); border-radius: 12px; padding: 0.2rem 0.7rem; font-size: 0.75rem; font-weight: 600; margin-top: 0.8rem; }
+
+  /* PRICING */
+  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .price-card {
+    border: 1.5px solid var(--border); border-radius: 16px;
+    padding: 2rem; background: white; position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .price-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(42,127,127,0.12); }
+  .price-card.featured { border-color: var(--teal); border-width: 2px; }
+  .featured-badge {
+    position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+    background: var(--teal); color: white; border-radius: 20px;
+    padding: 0.25rem 1rem; font-size: 0.75rem; font-weight: 700; white-space: nowrap;
+  }
+  .price-type { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; color: var(--grey); text-transform: uppercase; margin-bottom: 0.4rem; }
+  .price-title { font-size: 1.2rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
+  .price-amount { font-size: 2.5rem; font-weight: 700; color: var(--teal); line-height: 1; }
+  .price-amount span { font-size: 1rem; color: var(--grey); font-weight: 400; }
+  .price-duration { color: var(--grey); font-size: 0.85rem; margin-bottom: 1.5rem; }
+  .price-features { list-style: none; margin-bottom: 1.5rem; }
+  .price-features li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.9rem; color: var(--dark); margin-bottom: 0.5rem; }
+  .price-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+  .price-note { font-size: 0.8rem; color: var(--grey); font-style: italic; border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 0.5rem; }
+  .btn-book {
+    display: block; text-align: center; width: 100%;
+    background: var(--teal); color: white; border: none;
+    padding: 0.75rem; border-radius: 25px; font-weight: 600; font-size: 0.95rem;
+    cursor: pointer; text-decoration: none; transition: background 0.2s;
+  }
+  .btn-book:hover { background: var(--teal-dark); }
+  .price-card.featured .btn-book { background: var(--green); }
+  .price-card.featured .btn-book:hover { background: var(--green-dark); }
+
+  /* HOW IT WORKS */
+  .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+  .step { text-align: center; }
+  .step-num {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--teal); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; font-weight: 700; margin: 0 auto 1rem;
+  }
+  .step h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.4rem; }
+  .step p { font-size: 0.9rem; color: var(--grey); }
+
+  /* TESTIMONIALS */
+  .testi-bg { background: var(--light); }
+  .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; }
+  .testi-card {
+    background: white; border: 1.5px solid var(--border); border-radius: 16px;
+    padding: 1.8rem; position: relative;
+  }
+  .testi-quote { font-size: 3rem; color: var(--teal-light); line-height: 0.5; font-family: Georgia, serif; margin-bottom: 0.5rem; }
+  .testi-text { color: var(--dark); font-size: 0.95rem; font-style: italic; margin-bottom: 1.2rem; }
+  .testi-author { display: flex; align-items: center; gap: 0.75rem; }
+  .testi-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--teal); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.9rem; flex-shrink: 0;
+  }
+  .testi-name { font-weight: 700; font-size: 0.9rem; color: var(--dark); }
+  .testi-role { font-size: 0.78rem; color: var(--grey); }
+  .stars { color: #f5a623; font-size: 0.85rem; margin-bottom: 0.8rem; }
+
+  /* POLICY */
+  .policy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .policy-card {
+    background: white; border: 1.5px solid var(--border); border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .policy-icon { font-size: 1.6rem; margin-bottom: 0.7rem; }
+  .policy-card h3 { font-size: 1rem; font-weight: 700; color: var(--teal); margin-bottom: 0.5rem; }
+  .policy-card p { color: var(--grey); font-size: 0.88rem; }
+
+  /* CONTACT */
+  .contact-wrap {
+    max-width: 680px; margin: 0 auto;
+    background: white; border: 1.5px solid var(--border); border-radius: 20px;
+    padding: 2.5rem; box-shadow: 0 8px 32px rgba(42,127,127,0.08);
+  }
+  .contact-wrap h3 { font-size: 1.4rem; font-weight: 700; color: var(--dark); margin-bottom: 0.4rem; }
+  .contact-wrap p { color: var(--grey); margin-bottom: 2rem; font-size: 0.95rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+  .form-group label { font-size: 0.82rem; font-weight: 600; color: var(--dark); }
+  .form-group input, .form-group select, .form-group textarea {
+    border: 1.5px solid var(--border); border-radius: 10px;
+    padding: 0.75rem 1rem; font-size: 0.95rem;
+    font-family: inherit; color: var(--dark);
+    outline: none; transition: border-color 0.2s;
+    background: white;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--teal); }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+  .form-submit {
+    width: 100%; background: var(--teal); color: white; border: none;
+    padding: 1rem; border-radius: 30px; font-size: 1rem; font-weight: 700;
+    cursor: pointer; transition: background 0.2s; margin-top: 0.5rem;
+  }
+  .form-submit:hover { background: var(--teal-dark); }
+  .contact-alt { margin-top: 1.8rem; text-align: center; }
+  .contact-alt p { font-size: 0.88rem; color: var(--grey); margin-bottom: 0.8rem; }
+  .whatsapp-btn {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: #25D366; color: white; border-radius: 30px;
+    padding: 0.7rem 1.6rem; text-decoration: none; font-weight: 700; font-size: 0.95rem;
+    transition: background 0.2s;
+  }
+  .whatsapp-btn:hover { background: #1da851; }
+  .whatsapp-icon { width: 20px; height: 20px; fill: white; }
+
+  /* FAQ */
+  .faq-list { max-width: 740px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 1.2rem 0; }
+  .faq-q { font-weight: 700; color: var(--dark); font-size: 1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+  .faq-q span { color: var(--teal); font-size: 1.2rem; font-weight: 400; }
+  .faq-a { color: var(--grey); font-size: 0.93rem; padding-top: 0.7rem; display: none; }
+  .faq-item.open .faq-a { display: block; }
+  .faq-item.open .faq-q span { transform: rotate(45deg); display: inline-block; }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark); color: rgba(255,255,255,0.7);
+    padding: 3rem 2rem 1.5rem; text-align: center;
+  }
+  .footer-brand { font-size: 1.4rem; font-weight: 700; color: white; margin-bottom: 0.3rem; }
+  .footer-tagline { font-size: 0.85rem; font-style: italic; color: var(--teal-mid); margin-bottom: 1.5rem; }
+  .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+  .footer-links a:hover { color: white; }
+  .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.35); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.2rem; margin-top: 0.5rem; }
+
+  /* WHATSAPP FLOAT */
+  .wa-float {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+    background: #25D366; color: white; border-radius: 50%;
+    width: 58px; height: 58px; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.4); text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,211,102,0.5); }
+  .wa-float svg { width: 30px; height: 30px; fill: white; }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <strong>Teacher Benny</strong>
+    <span>Your English Journey Starts Here</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#specialities">Specialities</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book a Lesson</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">&#127760; Online English Lessons – All Ages Welcome</div>
+    <h1>Learn English with<br><span>Teacher Benny</span></h1>
+    <p class="hero-tagline">Your English Journey Starts Here</p>
+    <p class="hero-sub">Personalised 1:1 online lessons for kids and adults. Specialising in grammar (A1–B2), speaking, listening &amp; writing — taught with warmth, patience &amp; 10+ years of experience.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Book Your First Lesson</a>
+      <a href="#pricing" class="btn-outline">See Pricing</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>10+</strong><span>Years Experience</span></div>
+      <div class="hero-stat"><strong>1:1</strong><span>Personalised Lessons</span></div>
+      <div class="hero-stat"><strong>100%</strong><span>Online &amp; Flexible</span></div>
+      <div class="hero-stat"><strong>All</strong><span>Ages Welcome</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="about-avatar">&#128483;</div>
+        <div class="about-name">Teacher Benny</div>
+        <div class="about-role">Online ESL Teacher &amp; Speaking Coach</div>
+        <div class="about-tags">
+          <span class="tag">Speaking Specialist</span>
+          <span class="tag">Grammar A1–B2</span>
+          <span class="tag">Kids ESL</span>
+          <span class="tag">Listening &amp; Writing</span>
+          <span class="tag">10+ Years</span>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">A teacher who truly listens</h2>
+        <p>Hi, I'm Benny — an online English teacher with over 10 years of experience helping students of all ages find their voice in English. I believe learning a language should feel natural, enjoyable, and completely tailored to you.</p>
+        <p>Whether you're a young learner just starting out, an adult looking to build confidence in conversation, or someone who wants to strengthen their grammar and listening — I'm here to guide you every step of the way.</p>
+        <ul class="check-list">
+          <li>All lessons are fully personalised — no generic textbooks</li>
+          <li>Speaking &amp; conversation is my number one speciality</li>
+          <li>All lesson plans and materials are provided by me</li>
+          <li>Flexible scheduling — online via Microsoft Teams</li>
+          <li>Warm, patient and encouraging teaching style</li>
+          <li>Teaching kids, adults &amp; business professionals</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALITIES -->
+<section id="specialities" class="spec-bg">
+  <div class="section-inner">
+    <div class="section-label">What I Teach</div>
+    <h2 class="section-title">My Specialities</h2>
+    <p class="section-sub">Grammar (A1–B2), speaking, listening &amp; writing — every lesson built around you.</p>
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="spec-icon">&#127908;</div>
+        <h3>Speaking &amp; Conversation</h3>
+        <p>My core speciality. Build real confidence in spoken English through guided conversation, pronunciation work, and everyday dialogue practice. Perfect for students who want to actually <em>speak</em> — not just study.</p>
+        <span class="spec-age">All ages</span>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">&#128188;</div>
+        <h3>Business English</h3>
+        <p>Professional vocabulary, email writing, presentations, meetings &amp; workplace communication. A great fit for students who need English in a professional setting — taught within the A1–B2 framework.</p>
+        <span class="spec-age">Adults</span>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">&#128218;</div>
+        <h3>General English (A1–B2)</h3>
+        <p>Grammar, vocabulary, speaking, listening &amp; writing — all covered across levels A1 to B2. Whether you're just starting out or looking to sharpen your skills, lessons are fully tailored to where you are and where you want to go.</p>
+        <span class="spec-age">All levels welcome</span>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">&#127774;</div>
+        <h3>English for Kids</h3>
+        <p>Fun, engaging, age-appropriate lessons designed to make young learners love English. Stories, games, songs &amp; activities that build vocabulary and confidence in a safe, encouraging environment.</p>
+        <span class="spec-age">Ages 5–12</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="section-label">Lesson Rates</div>
+    <h2 class="section-title">Simple, transparent pricing</h2>
+    <p class="section-sub">All sessions are 45 minutes. Payment is made in advance. No hidden fees, ever.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-type">For Adults</div>
+        <div class="price-title">Adult 1:1 Lesson</div>
+        <div class="price-amount">₺850 <span>/ lesson</span></div>
+        <div class="price-duration">45-minute online session</div>
+        <ul class="price-features">
+          <li>1:1 personalised lesson</li>
+          <li>All materials provided</li>
+          <li>Grammar A1–B2 covered</li>
+          <li>Speaking &amp; listening focus</li>
+          <li>Writing support available</li>
+          <li>Via Microsoft Teams</li>
+          <li>Flexible scheduling</li>
+        </ul>
+        <div class="price-note">Payment in advance required. Cancellations must be made 4+ hours before the session.</div>
+        <a href="#contact" class="btn-book">Book a Lesson</a>
+      </div>
+      <div class="price-card featured">
+        <div class="featured-badge">&#11088; Most Popular</div>
+        <div class="price-type">For Kids</div>
+        <div class="price-title">Kids 1:1 Lesson</div>
+        <div class="price-amount">₺600 <span>/ lesson</span></div>
+        <div class="price-duration">45-minute online session</div>
+        <ul class="price-features">
+          <li>1:1 personalised lesson</li>
+          <li>All materials provided</li>
+          <li>Fun, engaging activities</li>
+          <li>Age-appropriate content</li>
+          <li>Via Microsoft Teams</li>
+          <li>Progress updates for parents</li>
+        </ul>
+        <div class="price-note">Payment in advance required. Cancellations must be made 4+ hours before the session.</div>
+        <a href="#contact" class="btn-book">Book a Lesson</a>
+      </div>
+    </div>
+    <p style="text-align:center; color: var(--grey); font-size: 0.85rem; margin-top: 1.5rem;">&#128179; Quotes valid for 7 days from date of issue &nbsp;|&nbsp; &#128241; Contact via WhatsApp to get started</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" style="background: var(--light);">
+  <div class="section-inner">
+    <div class="section-label">Getting Started</div>
+    <h2 class="section-title">How it works</h2>
+    <p class="section-sub">From first message to first lesson — it's simple, fast and friendly.</p>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Get in Touch</h3>
+        <p>Send me a message via WhatsApp or the contact form. Tell me about your goals, level and preferred schedule.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Receive Your Quote</h3>
+        <p>I'll send you a personalised quote within 24 hours. All pricing is clear and upfront — no surprises.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Pay &amp; Confirm</h3>
+        <p>Payment is made in advance to confirm your sessions. I'll send full details and a payment link.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Start Learning!</h3>
+        <p>Your first lesson is planned and personalised just for you. We meet online via Microsoft Teams — and your journey begins!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testi-bg">
+  <div class="section-inner">
+    <div class="section-label">Student Reviews</div>
+    <h2 class="section-title">What my students say</h2>
+    <p class="section-sub">Real experiences from real learners.</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Teacher Benny made me feel so comfortable speaking English. After just a few sessions, I stopped being afraid to talk! My confidence has improved so much.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">A</div>
+          <div><div class="testi-name">Ayşe K.</div><div class="testi-role">Adult student – Conversation English</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testi-quote">"</div>
+        <p class="testi-text">My daughter used to be so shy in English class at school. Now she loves it! Teacher Benny makes the lessons really fun with games and stories. Highly recommend for kids!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">M</div>
+          <div><div class="testi-name">Mehmet T.</div><div class="testi-role">Parent – Kids English lessons</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testi-quote">"</div>
+        <p class="testi-text">My grammar has improved so much since starting with Teacher Benny. The lessons are structured but relaxed — I always leave feeling like I actually learned something useful.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">S</div>
+          <div><div class="testi-name">Selin A.</div><div class="testi-role">Adult – General English (B1)</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POLICY -->
+<section id="policy">
+  <div class="section-inner">
+    <div class="section-label">Good to Know</div>
+    <h2 class="section-title">Policies &amp; Info</h2>
+    <p class="section-sub">Clear, fair and straightforward — so we can focus on learning.</p>
+    <div class="policy-grid">
+      <div class="policy-card">
+        <div class="policy-icon">&#128336;</div>
+        <h3>Cancellation Policy</h3>
+        <p>Cancellations must be made at least <strong>4 hours</strong> before the session. Lessons cancelled within 4 hours will be charged in full. Lessons cancelled on time will be rescheduled free of charge.</p>
+      </div>
+      <div class="policy-card">
+        <div class="policy-icon">&#128179;</div>
+        <h3>Payment</h3>
+        <p>All payments are made <strong>in advance</strong> before sessions begin. This confirms your booking and ensures your spot is reserved.</p>
+      </div>
+      <div class="policy-card">
+        <div class="policy-icon">&#128203;</div>
+        <h3>Materials</h3>
+        <p>All lesson plans and learning materials are <strong>provided by Teacher Benny</strong>. You don't need to buy any books or resources.</p>
+      </div>
+      <div class="policy-card">
+        <div class="policy-icon">&#128260;</div>
+        <h3>Rescheduling</h3>
+        <p>Life happens! If you need to move a session, just let me know <strong>4+ hours in advance</strong> and we'll find a time that works for everyone.</p>
+      </div>
+      <div class="policy-card">
+        <div class="policy-icon">&#128250;</div>
+        <h3>Platform</h3>
+        <p>All lessons are held <strong>online</strong> via Microsoft Teams. All you need is a stable internet connection and a device with a camera and microphone.</p>
+      </div>
+      <div class="policy-card">
+        <div class="policy-icon">&#128196;</div>
+        <h3>Quotes</h3>
+        <p>All lesson quotes are valid for <strong>7 days</strong> from the date of issue. Contact me to receive a personalised quote for your needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background: var(--light);">
+  <div class="section-inner">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Frequently asked questions</h2>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What age groups do you teach? <span>+</span></div>
+        <div class="faq-a">I teach all ages! For children (ages 5–12) I offer fun, engaging kids ESL lessons. For teenagers and adults I cover grammar from A1 to B2, speaking, listening and writing. Every lesson is adapted to the student's age, level and goals.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need to buy any books or materials? <span>+</span></div>
+        <div class="faq-a">No! All lesson plans and learning materials are prepared and provided by me. You just show up and learn.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I pay? <span>+</span></div>
+        <div class="faq-a">Payment is made in advance before your lessons begin. I'll send you full payment details once we've agreed on a schedule. I'll also provide a proper invoice or quote document for your records.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if I need to cancel a lesson? <span>+</span></div>
+        <div class="faq-a">No problem — just let me know at least 4 hours before the session. If you cancel on time, there's no charge and we'll reschedule to a time that suits everyone. Cancellations made with less than 4 hours notice will count as a lesson and be charged in full.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Which platform do we use for lessons? <span>+</span></div>
+        <div class="faq-a">All lessons are held online via Microsoft Teams. You'll just need a device with a camera and microphone and a stable internet connection. I'll send you the meeting link before each session.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">I'm a complete beginner. Can I still join? <span>+</span></div>
+        <div class="faq-a">Of course! My General English lessons cover all levels from A1 to B2 — so whether you're just starting out or already have some English and want to build on it, you're very welcome. Lessons are never "just for beginners." We start exactly where you are.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div style="text-align:center; margin-bottom: 2.5rem;">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Ready to start your journey?</h2>
+      <p style="color: var(--grey); font-size: 1rem;">Fill in the form below and I'll get back to you within 24 hours.</p>
+    </div>
+    <div class="contact-wrap">
+      <h3>Send me a message</h3>
+      <p>Tell me a bit about yourself and what you'd like to learn — I'll send you a personalised quote!</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="e.g. Ayşe Kaya">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone / WhatsApp</label>
+          <input type="text" placeholder="+90 ___ ___ ____">
+        </div>
+        <div class="form-group">
+          <label>Student Type</label>
+          <select>
+            <option value="">Select...</option>
+            <option>Adult (myself)</option>
+            <option>Child (for my kid)</option>
+            <option>Business professional</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Which type of lesson interests you?</label>
+        <select>
+          <option value="">Select...</option>
+          <option>Speaking &amp; Conversation</option>
+          <option>General English (A1–B2)</option>
+          <option>Business English</option>
+          <option>English for Kids</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Tell me about your goals or questions</label>
+        <textarea placeholder="e.g. I want to improve my speaking confidence. I'm an intermediate level adult..."></textarea>
+      </div>
+      <button class="form-submit" onclick="alert('Thank you! Teacher Benny will reply within 24 hours. You can also reach out directly on WhatsApp: +90 505 007 0911')">Send Message &#8594;</button>
+      <div class="contact-alt">
+        <p>Prefer to chat directly? Message me on WhatsApp:</p>
+        <a href="https://wa.me/905050070911" target="_blank" class="whatsapp-btn">
+          <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Teacher Benny</div>
+  <div class="footer-tagline">Your English Journey Starts Here</div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#specialities">Specialities</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div style="color: rgba(255,255,255,0.55); font-size:0.88rem; margin-bottom:0.5rem;">
+    &#128231; teacherbenny26@gmail.com &nbsp;|&nbsp; &#128241; +90 505 007 0911
+  </div>
+  <div class="footer-copy">&copy; 2026 Teacher Benny. All rights reserved. | Online ESL Lessons</div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/905050070911" target="_blank" class="wa-float" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
