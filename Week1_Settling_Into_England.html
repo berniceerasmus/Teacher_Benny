@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>England Life — Teacher Benny | Communication, Confidence & Integration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+
+/* ============================= TOKENS ============================= */
+:root{
+  --navy: #122142;
+  --navy-deep: #0B1730;
+  --navy-soft: #1F3A63;
+  --gold: #C9A227;
+  --gold-light: #E2C465;
+  --gold-soft: #F1E2AE;
+  --cream: #F7F2E4;
+  --cream-soft: #FFFDF7;
+  --cream-line: #E8DEC4;
+  --ink: #262318;
+  --ink-soft: #5B5848;
+  --green: #4F6F52;
+  --green-soft: #E7EFE5;
+  --rust: #A5462B;
+  --rust-soft: #F4E3DC;
+  --shadow: 0 14px 34px rgba(18,33,66,0.12);
+  --shadow-sm: 0 6px 16px rgba(18,33,66,0.10);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'DM Sans', sans-serif;
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{
+  font-family:'Playfair Display', serif;
+  color:var(--navy);
+  margin:0 0 0.5em;
+  line-height:1.2;
+}
+p{margin:0 0 1em;}
+a{color:var(--navy-soft);}
+img,svg{display:block;max-width:100%;}
+.container{max-width:1080px;margin:0 auto;padding:0 24px;}
+button{font-family:'DM Sans', sans-serif;cursor:pointer;}
+:focus-visible{outline:3px solid var(--gold); outline-offset:2px;}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+}
+
+/* ============================= BUTTONS ============================= */
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:12px 24px; border-radius:999px; border:1.5px solid transparent;
+  font-weight:700; font-size:14.5px; letter-spacing:0.02em;
+  transition:transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn:hover{transform:translateY(-1px);}
+.btn-primary{background:var(--gold); color:var(--navy-deep); box-shadow:var(--shadow-sm);}
+.btn-primary:hover{background:var(--gold-light);}
+.btn-secondary{background:var(--navy); color:var(--cream-soft);}
+.btn-secondary:hover{background:var(--navy-soft);}
+.btn-ghost{background:transparent; border-color:var(--navy); color:var(--navy);}
+.btn-ghost:hover{background:rgba(18,33,66,0.06);}
+.btn-sm{padding:8px 16px; font-size:13px;}
+.btn-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:18px;}
+
+/* ============================= HERO ============================= */
+.hero{
+  background:radial-gradient(circle at 18% 20%, var(--navy-soft) 0%, var(--navy) 45%, var(--navy-deep) 100%);
+  color:var(--cream-soft);
+  padding:78px 0 56px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:radial-gradient(circle, rgba(201,162,39,0.18) 1px, transparent 1.4px);
+  background-size:26px 26px;
+  opacity:0.5;
+}
+.hero-inner{position:relative; z-index:1; text-align:center;}
+.hero-eyebrow{
+  font-size:13px; letter-spacing:0.22em; text-transform:uppercase;
+  color:var(--gold-light); font-weight:700; margin-bottom:14px;
+}
+.hero-title{
+  font-size:clamp(42px, 8vw, 76px);
+  color:var(--cream-soft);
+  font-weight:800;
+  letter-spacing:0.01em;
+  margin-bottom:6px;
+}
+.hero-sub{
+  font-family:'Playfair Display', serif; font-style:italic; font-weight:500;
+  font-size:clamp(17px, 2.6vw, 22px);
+  color:var(--gold-soft);
+  margin-bottom:18px;
+}
+.hero-tagline{
+  max-width:560px; margin:0 auto 30px;
+  color:rgba(247,242,228,0.82); font-size:16px;
+}
+.hero-journey{max-width:640px; margin:0 auto;}
+.hero-journey svg{width:100%; height:auto;}
+
+/* ============================= QUICK NAV ============================= */
+.quicknav{
+  background:var(--cream-soft);
+  border-bottom:1px solid var(--cream-line);
+  position:sticky; top:0; z-index:50;
+  box-shadow:0 2px 10px rgba(18,33,66,0.05);
+}
+.quicknav-scroll{
+  display:flex; gap:6px; overflow-x:auto; padding:10px 24px;
+  max-width:1080px; margin:0 auto;
+  scrollbar-width:thin;
+}
+.quicknav a, .qn-link{
+  flex:0 0 auto;
+  font-size:13.5px; font-weight:700; text-decoration:none; color:var(--navy);
+  padding:8px 16px; border-radius:999px; white-space:nowrap;
+  border:1px solid transparent; background:none; font-family:'DM Sans', sans-serif;
+}
+.qn-link:hover, .quicknav a:hover{background:var(--cream); border-color:var(--cream-line);}
+
+section[id], .week-module{scroll-margin-top:60px;}
+
+/* ============================= SECTIONS ============================= */
+.section{padding:68px 0;}
+.section-alt{background:var(--cream-soft); border-top:1px solid var(--cream-line); border-bottom:1px solid var(--cream-line);}
+.section-eyebrow{
+  font-size:12.5px; letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--gold); font-weight:700; margin-bottom:8px;
+}
+.section-title{font-size:clamp(26px,4vw,36px); margin-bottom:10px;}
+.section-intro{max-width:640px; color:var(--ink-soft); margin-bottom:36px;}
+.section-intro.center{margin-left:auto; margin-right:auto; text-align:center;}
+.section-head.center{text-align:center;}
+
+/* ============================= CARDS ============================= */
+.card{
+  background:var(--cream-soft);
+  border:1px solid var(--cream-line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);
+  padding:28px;
+}
+.card-gold-edge{border-left:4px solid var(--gold);}
+
+/* ============================= FORM ELEMENTS ============================= */
+.field{margin-bottom:18px;}
+.field label{display:block; font-weight:700; font-size:14px; color:var(--navy); margin-bottom:6px;}
+.field .hint{font-size:12.5px; color:var(--ink-soft); margin-top:5px;}
+input[type=text], input[type=date], textarea, select{
+  width:100%; padding:11px 14px; border-radius:var(--radius-sm);
+  border:1.5px solid var(--cream-line); background:#fff;
+  font-family:'DM Sans', sans-serif; font-size:15px; color:var(--ink);
+}
+input[type=text]:focus, textarea:focus, select:focus{border-color:var(--gold);}
+textarea{resize:vertical; min-height:90px;}
+
+/* ============================= WELCOME ============================= */
+.howto-list{list-style:none; margin:0; padding:0; display:grid; gap:14px;}
+.howto-list li{display:flex; gap:14px; align-items:flex-start;}
+.howto-num{
+  flex:0 0 32px; height:32px; border-radius:50%; background:var(--navy); color:var(--gold-light);
+  display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px;
+}
+
+/* ============================= SLIDERS / BASELINE ============================= */
+.slider-card{padding:18px 20px; border:1px solid var(--cream-line); border-radius:var(--radius-sm); background:#fff; margin-bottom:14px;}
+.slider-top{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;}
+.slider-top strong{font-size:15px; color:var(--navy);}
+.slider-value{font-family:'Playfair Display',serif; font-weight:700; color:var(--gold); font-size:18px;}
+input[type=range]{
+  width:100%; -webkit-appearance:none; height:6px; border-radius:4px;
+  background:linear-gradient(to right, var(--gold) 0%, var(--cream-line) 0%);
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none; width:20px; height:20px; border-radius:50%;
+  background:var(--navy); border:3px solid var(--gold); cursor:pointer; margin-top:-1px;
+}
+input[type=range]::-moz-range-thumb{
+  width:20px; height:20px; border-radius:50%; background:var(--navy); border:3px solid var(--gold); cursor:pointer;
+}
+
+/* ============================= DASHBOARD ============================= */
+.dashboard-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+@media (max-width:900px){.dashboard-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.dashboard-grid{grid-template-columns:1fr;}}
+.skill-card{padding:20px; border-radius:var(--radius-sm); background:#fff; border:1px solid var(--cream-line);}
+.skill-name{font-weight:700; color:var(--navy); margin-bottom:10px; font-size:14.5px;}
+.skill-bar-track{height:10px; border-radius:6px; background:var(--cream-line); overflow:hidden; margin-bottom:8px; position:relative;}
+.skill-bar-fill{height:100%; background:var(--navy); border-radius:6px; transition:width 0.5s ease;}
+.skill-bar-fill.now{background:var(--gold);}
+.skill-meta{display:flex; justify-content:space-between; font-size:12.5px; color:var(--ink-soft);}
+.delta-badge{font-weight:700; padding:2px 9px; border-radius:999px; font-size:12px;}
+.delta-up{background:var(--green-soft); color:var(--green);}
+.delta-flat{background:var(--cream-line); color:var(--ink-soft);}
+.delta-down{background:var(--rust-soft); color:var(--rust);}
+.dash-update-row{margin-top:6px;}
+.dash-summary{margin-top:24px; text-align:center; font-family:'Playfair Display',serif; font-size:18px; color:var(--navy);}
+
+/* ============================= VOCAB JOURNAL TABLE ============================= */
+.vocab-table-wrap{overflow-x:auto; border:1px solid var(--cream-line); border-radius:var(--radius-sm); background:#fff;}
+table.vocab-table{width:100%; border-collapse:collapse; min-width:680px;}
+table.vocab-table th{
+  background:var(--navy); color:var(--cream-soft); text-align:left; font-size:13px;
+  letter-spacing:0.04em; text-transform:uppercase; padding:12px 14px; font-weight:700;
+}
+table.vocab-table td{padding:8px 10px; border-bottom:1px solid var(--cream-line); vertical-align:top;}
+table.vocab-table input, table.vocab-table textarea{border:1px solid transparent; background:transparent; padding:6px 8px; font-size:14.5px;}
+table.vocab-table input:hover, table.vocab-table textarea:hover{background:var(--cream);}
+table.vocab-table input:focus, table.vocab-table textarea:focus{background:#fff; border-color:var(--gold);}
+table.vocab-table textarea{min-height:38px;}
+.row-del{background:none; border:none; color:var(--rust); font-weight:700; font-size:13px;}
+
+/* ============================= REFLECTION JOURNAL ============================= */
+.journal-entry{
+  background:#fff; border:1px solid var(--cream-line); border-radius:var(--radius-sm);
+  padding:16px 18px; margin-bottom:12px; position:relative;
+}
+.journal-date{font-size:12.5px; color:var(--gold); font-weight:700; letter-spacing:0.04em; margin-bottom:6px; display:block;}
+.journal-del{position:absolute; top:14px; right:14px; background:none; border:none; color:var(--ink-soft); font-size:12px;}
+.journal-empty{color:var(--ink-soft); font-style:italic; font-size:14.5px;}
+
+/* ============================= JOURNEY MAP ============================= */
+.journey-track{position:relative; padding:30px 0 10px;}
+.journey-line-svg{position:absolute; top:46px; left:0; width:100%; z-index:0;}
+.journey-grid{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:18px; position:relative; z-index:1;
+}
+@media (max-width:900px){.journey-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:540px){.journey-grid{grid-template-columns:1fr;}}
+.week-node{
+  background:#fff; border:1.5px solid var(--cream-line); border-radius:var(--radius-sm);
+  padding:16px; text-align:left;
+}
+.week-node .wn-num{
+  display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px;
+  border-radius:50%; background:var(--cream-line); color:var(--ink-soft); font-weight:700; font-size:13px; margin-bottom:8px;
+}
+.week-node.active{border-color:var(--gold); box-shadow:var(--shadow-sm);}
+.week-node.active .wn-num{background:var(--gold); color:var(--navy-deep);}
+.week-node .wn-title{font-weight:700; font-size:14px; color:var(--navy); margin-bottom:2px;}
+.week-node .wn-topic{font-size:12.5px; color:var(--ink-soft);}
+.week-node.locked{opacity:0.6;}
+.week-node .wn-lock{font-size:11px; color:var(--ink-soft); margin-top:6px; display:inline-block;}
+.week-progress-mini{height:5px; background:var(--cream-line); border-radius:4px; margin-top:10px; overflow:hidden;}
+.week-progress-mini-fill{height:100%; background:var(--gold);}
+
+/* ============================= WEEK MODULE ============================= */
+.week-module{padding:64px 0 80px;}
+.week-banner{
+  background:linear-gradient(120deg, var(--navy) 0%, var(--navy-soft) 100%);
+  color:var(--cream-soft); border-radius:var(--radius); padding:36px 32px; margin-bottom:34px;
+  position:relative; overflow:hidden;
+}
+.week-banner .wb-eyebrow{color:var(--gold-light); font-weight:700; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:8px;}
+.week-banner h2{color:#fff; font-size:clamp(26px,4vw,34px); margin-bottom:8px;}
+.week-banner p{color:rgba(247,242,228,0.82); max-width:620px; margin-bottom:0;}
+.week-progress-wrap{margin-top:22px;}
+.week-progress-label{display:flex; justify-content:space-between; font-size:12.5px; color:var(--gold-light); margin-bottom:6px;}
+.week-progress-track{height:8px; background:rgba(255,255,255,0.18); border-radius:5px; overflow:hidden;}
+.week-progress-fill{height:100%; background:var(--gold); border-radius:5px; transition:width 0.4s ease;}
+
+/* ===== Accordion (Parts) ===== */
+.part{
+  border:1px solid var(--cream-line); border-radius:var(--radius-sm); margin-bottom:14px; background:var(--cream-soft);
+  overflow:hidden;
+}
+.part-header{
+  display:flex; align-items:center; gap:14px; padding:18px 20px;
+  background:#fff; border:none; width:100%; text-align:left;
+}
+.part-num{
+  flex:0 0 38px; height:38px; border-radius:50%; background:var(--navy); color:var(--gold-light);
+  display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-weight:700;
+}
+.part-headtext{flex:1;}
+.part-headtext .pt-label{font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); font-weight:700;}
+.part-headtext h3{margin:2px 0 0; font-size:19px;}
+.part-chevron{flex:0 0 auto; color:var(--navy); transition:transform 0.25s ease; font-size:18px;}
+.part.open .part-chevron{transform:rotate(180deg);}
+.part-body{max-height:0; overflow:hidden; transition:max-height 0.35s ease;}
+.part.open .part-body{max-height:6000px;}
+.part-body-inner{padding:6px 24px 28px;}
+.part-complete-row{
+  display:flex; align-items:center; gap:10px; margin-top:22px; padding-top:16px; border-top:1px dashed var(--cream-line);
+}
+.part-complete-row label{font-size:13.5px; font-weight:700; color:var(--navy); display:flex; gap:8px; align-items:center;}
+.part-complete-row input{width:18px; height:18px; accent-color:var(--gold);}
+
+/* generic small heading inside parts */
+.sub-h{font-size:13px; letter-spacing:0.1em; text-transform:uppercase; color:var(--navy); font-weight:700; margin:22px 0 10px;}
+.sub-h:first-child{margin-top:0;}
+
+/* ===== Reflection Qs (Part 1) ===== */
+.reflect-q{margin-bottom:18px;}
+.reflect-q .rq-text{font-weight:700; color:var(--navy); margin-bottom:6px; font-size:15px;}
+
+/* ===== Vocab cards (Part 2) ===== */
+.vword-grid{display:grid; gap:16px;}
+.vword-card{border:1px solid var(--cream-line); border-radius:var(--radius-sm); padding:18px 20px; background:#fff;}
+.vword-head{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:6px;}
+.vword-head .vw-term{font-family:'Playfair Display',serif; font-weight:700; font-size:19px; color:var(--navy);}
+.vword-head .vw-pos{font-size:12px; color:var(--gold); font-weight:700; text-transform:uppercase;}
+.vw-def{margin-bottom:6px;}
+.vw-ex{font-style:italic; color:var(--ink-soft); margin-bottom:10px;}
+.vw-personal label{font-size:13px; font-weight:700; color:var(--navy); display:block; margin-bottom:6px;}
+
+/* ===== Expressions (Part 3) ===== */
+.expr-card{border:1px solid var(--cream-line); border-radius:var(--radius-sm); padding:18px 20px; background:#fff; margin-bottom:14px; border-left:4px solid var(--gold);}
+.expr-phrase{font-family:'Playfair Display',serif; font-style:italic; font-weight:700; font-size:18px; color:var(--navy); margin-bottom:6px;}
+.expr-row{margin-bottom:4px; font-size:14.5px;}
+.expr-row strong{color:var(--navy);}
+
+/* ===== Reading corner (Part 4) ===== */
+.reading-card{background:#fff; border:1px solid var(--cream-line); border-radius:var(--radius-sm); padding:26px 28px;}
+.reading-title{font-size:22px; margin-bottom:4px;}
+.reading-byline{font-size:12.5px; color:var(--ink-soft); margin-bottom:18px; letter-spacing:0.03em;}
+.reading-text p{margin-bottom:14px;}
+.match-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+@media (max-width:560px){.match-grid{grid-template-columns:1fr;}}
+.match-row{display:flex; align-items:center; gap:10px; background:var(--cream); padding:8px 12px; border-radius:8px;}
+.match-row select{flex:1;}
+.qa-block{margin-bottom:14px;}
+.qa-block .qa-q{font-weight:700; color:var(--navy); margin-bottom:6px;}
+
+/* ===== Grammar (Part 5) ===== */
+.grammar-explain{background:var(--cream); border-radius:var(--radius-sm); padding:18px 20px; margin-bottom:18px;}
+.grammar-table{width:100%; border-collapse:collapse; margin:14px 0;}
+.grammar-table td, .grammar-table th{padding:8px 10px; border-bottom:1px solid var(--cream-line); font-size:14.5px;}
+.grammar-table th{text-align:left; color:var(--navy); font-weight:700;}
+.fillblank-row{display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap;}
+.fillblank-row span{font-size:15px;}
+.fillblank-row input{width:160px; display:inline-block;}
+.fb-check{padding:8px 14px;}
+.fb-feedback{font-size:13px; font-weight:700; margin-left:6px;}
+.fb-feedback.correct{color:var(--green);}
+.fb-feedback.incorrect{color:var(--rust);}
+
+/* ===== Speaking lab (Part 6) ===== */
+.speak-card{background:#fff; border:1px solid var(--cream-line); border-radius:var(--radius-sm); padding:18px 20px; margin-bottom:14px;}
+.speak-card h4{font-size:16px; margin-bottom:8px;}
+.role-cards{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:10px;}
+@media (max-width:600px){.role-cards{grid-template-columns:1fr;}}
+.role-card{background:var(--cream); border-radius:8px; padding:14px 16px; font-size:14.5px;}
+.role-card strong{display:block; color:var(--navy); margin-bottom:4px; font-size:13px; text-transform:uppercase; letter-spacing:0.04em;}
+
+/* ===== Culture grid (Part 7) ===== */
+.culture-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+@media (max-width:600px){.culture-grid{grid-template-columns:1fr;}}
+.culture-card{background:#fff; border:1px solid var(--cream-line); border-radius:var(--radius-sm); padding:16px 18px;}
+.culture-card .cc-icon{font-size:22px; margin-bottom:6px; display:block;}
+.culture-card h4{font-size:15.5px; margin-bottom:6px;}
+.culture-card p{font-size:14px; color:var(--ink-soft); margin-bottom:0;}
+
+/* ===== Mission (Part 8) ===== */
+.mission-card{background:linear-gradient(120deg, var(--navy) 0%, var(--navy-soft) 100%); color:#fff; border-radius:var(--radius-sm); padding:26px 28px;}
+.mission-card h4{color:var(--gold-light); font-size:13px; letter-spacing:0.16em; text-transform:uppercase; margin-bottom:8px;}
+.mission-card .mission-title{color:#fff; font-size:22px; margin-bottom:10px; font-family:'Playfair Display',serif;}
+.mission-card p{color:rgba(247,242,228,0.85);}
+.mission-checklist{list-style:none; padding:0; margin:14px 0; display:grid; gap:8px;}
+.mission-checklist li{display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:rgba(247,242,228,0.92);}
+.mission-checklist input{margin-top:3px; accent-color:var(--gold);}
+.mission-card textarea{background:rgba(255,255,255,0.94); margin-top:10px;}
+
+/* ===== Self-study (Part 9) ===== */
+.selfstudy-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+@media (max-width:700px){.selfstudy-grid{grid-template-columns:1fr;}}
+.ss-card{background:#fff; border:1px solid var(--cream-line); border-radius:var(--radius-sm); padding:18px 20px;}
+.ss-card h4{font-size:15.5px; margin-bottom:8px;}
+.listen-list{list-style:none; padding:0; margin:0; display:grid; gap:8px; font-size:14px;}
+.listen-list li{padding-left:18px; position:relative;}
+.listen-list li::before{content:"♪"; position:absolute; left:0; color:var(--gold);}
+.recall-row{display:flex; align-items:center; gap:10px; margin-bottom:8px;}
+.recall-row span{flex:0 0 130px; font-weight:700; color:var(--navy); font-size:14px;}
+
+/* ============================= CERTIFICATE ============================= */
+.certificate-wrap{display:flex; justify-content:center;}
+.certificate{
+  width:100%; max-width:760px; background:var(--cream-soft);
+  border:3px double var(--gold); border-radius:8px; padding:54px 48px; text-align:center; position:relative;
+}
+.certificate::before{
+  content:""; position:absolute; inset:14px; border:1px solid var(--cream-line); border-radius:4px; pointer-events:none;
+}
+.cert-eyebrow{font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:16px;}
+.cert-title{font-size:30px; margin-bottom:6px;}
+.cert-sub{font-style:italic; color:var(--ink-soft); margin-bottom:30px;}
+.cert-name{font-family:'Playfair Display',serif; font-size:32px; font-weight:700; color:var(--navy); border-bottom:1.5px solid var(--gold); display:inline-block; padding:0 10px 8px; margin-bottom:26px; min-width:280px;}
+.cert-body{max-width:480px; margin:0 auto 22px; color:var(--ink-soft);}
+.cert-progress{font-weight:700; color:var(--navy); margin-bottom:30px;}
+.cert-date{font-size:13.5px; color:var(--ink-soft);}
+@media print{
+  body *{visibility:hidden;}
+  .certificate, .certificate *{visibility:visible;}
+  .certificate{position:absolute; top:0; left:0; box-shadow:none;}
+}
+
+/* ============================= TOAST ============================= */
+.toast{
+  position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(20px);
+  background:var(--navy); color:var(--cream-soft); padding:12px 24px; border-radius:999px;
+  font-size:14px; font-weight:700; box-shadow:var(--shadow); opacity:0; transition:all 0.3s ease; z-index:999;
+  pointer-events:none;
+}
+.toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+
+/* ============================= FOOTER ============================= */
+.footer{background:var(--navy-deep); color:rgba(247,242,228,0.65); text-align:center; padding:36px 0; font-size:13.5px;}
+.footer strong{color:var(--gold-light);}
+
+/* sticky save bar */
+.sticky-save{
+  position:fixed; right:20px; bottom:20px; z-index:90;
+}
+@media (max-width:640px){.sticky-save{right:14px; bottom:14px;}}
+
+</style>
+</head>
+<body>
+
+<!-- ============================= HERO ============================= -->
+<header class="hero">
+  <div class="container hero-inner">
+    <div class="hero-eyebrow">Teacher Benny Presents</div>
+    <h1 class="hero-title">ENGLAND LIFE</h1>
+    <div class="hero-sub">Communication, Confidence &amp; Integration</div>
+    <p class="hero-tagline">A 12-week coaching programme for adults building a life in the UK — building confidence through communication, one real conversation at a time.</p>
+    <div class="hero-journey">
+      <svg viewBox="0 0 600 70" class="journey-line-decor" aria-hidden="true">
+        <line x1="20" y1="35" x2="580" y2="35" stroke="#C9A227" stroke-width="2" stroke-dasharray="2 8"/>
+        <circle cx="20" cy="35" r="9" fill="#C9A227"/>
+        <circle cx="120" cy="35" r="5" fill="#E2C465"/>
+        <circle cx="220" cy="35" r="5" fill="#E2C465"/>
+        <circle cx="320" cy="35" r="5" fill="#E2C465"/>
+        <circle cx="420" cy="35" r="5" fill="#E2C465"/>
+        <circle cx="580" cy="35" r="9" fill="#E2C465"/>
+        <text x="20" y="58" fill="#F1E2AE" font-size="11" text-anchor="middle" font-family="DM Sans">Week 1</text>
+        <text x="580" y="58" fill="#F1E2AE" font-size="11" text-anchor="middle" font-family="DM Sans">Week 12</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ============================= QUICK NAV ============================= -->
+<nav class="quicknav">
+  <div class="quicknav-scroll">
+    <button class="qn-link" onclick="scrollToSection('welcome')">Welcome</button>
+    <button class="qn-link" onclick="scrollToSection('dashboard')">Confidence Dashboard</button>
+    <button class="qn-link" onclick="scrollToSection('vocab-journal')">Vocabulary Journal</button>
+    <button class="qn-link" onclick="scrollToSection('reflection-journal')">Reflection Journal</button>
+    <button class="qn-link" onclick="scrollToSection('journey')">Your Journey</button>
+    <button class="qn-link" onclick="scrollToSection('week1')">Week 1</button>
+    <button class="qn-link" onclick="scrollToSection('certificate')">Certificate</button>
+  </div>
+</nav>
+
+<!-- ============================= WELCOME ============================= -->
+<section class="section" id="welcome">
+  <div class="container">
+    <div class="section-eyebrow">Before You Begin</div>
+    <h2 class="section-title">Welcome to England Life</h2>
+    <p class="section-intro">A short note from Teacher Benny, how this programme works, and a few details to personalise it for you.</p>
+
+    <div class="card card-gold-edge">
+      <h3 style="font-size:20px;">A note from Teacher Benny</h3>
+      <p>If you're reading this, your English is probably already stronger than you give it credit for. What's often missing isn't grammar or vocabulary — it's confidence: the nerve to start a conversation with a stranger, to ask a question in a shop without rehearsing it five times first, to laugh at a joke you only half understood.</p>
+      <p>England Life is built around that gap. Over twelve weeks, we'll work on the real situations you'll meet living here — registering with a doctor, small talk at the school gate, a phone call that goes slightly wrong, a joke that doesn't translate. Grammar will support you along the way, but it is never the main event. Communication is.</p>
+      <p style="margin-bottom:0;">Go at your own pace. Some weeks you'll fly through; others you'll want to sit with for longer. Both are fine. This is your programme.</p>
+
+      <div class="sub-h">How to use this workbook</div>
+      <ul class="howto-list">
+        <li><span class="howto-num">1</span><span>Work through one module per week — or slower, if life gets in the way. Each module has nine short parts, and you don't have to finish them in one sitting.</span></li>
+        <li><span class="howto-num">2</span><span>Tick the box at the end of each part as you complete it. Your progress bar fills in automatically, and your answers save on this device as you go.</span></li>
+        <li><span class="howto-num">3</span><span>Don't skip the Weekly Mission. It's a small, real-world task — the workbook only works if you step outside it.</span></li>
+        <li><span class="howto-num">4</span><span>Add new words to your Vocabulary Journal as you meet them, not just the ones in the lesson — your own discoveries matter more.</span></li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-top:28px;">
+      <h3 style="font-size:19px;">Confidence baseline — where are you starting from?</h3>
+      <p style="font-size:14px; color:var(--ink-soft); margin-bottom:18px;">Rate your current confidence in each area, 1 (very low) to 10 (completely comfortable). This becomes your starting point on the Confidence Dashboard below, so you can watch it move over the next 12 weeks.</p>
+      <div class="dashboard-grid" id="baseline-grid"></div>
+      <button class="btn btn-primary" style="margin-top:18px;" onclick="saveBaseline()">Save my starting point</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= DASHBOARD ============================= -->
+<section class="section section-alt" id="dashboard">
+  <div class="container">
+    <div class="section-eyebrow">Track Your Progress</div>
+    <h2 class="section-title">Confidence Dashboard</h2>
+    <p class="section-intro">Once you've saved your baseline above, update these sliders any time to see how far you've come. Be honest — small movements count.</p>
+    <div class="dashboard-grid" id="dashboard-grid"></div>
+    <div class="dash-summary" id="dash-summary"></div>
+    <div class="btn-row" style="justify-content:center;">
+      <button class="btn btn-secondary" onclick="saveCurrent()">Update my confidence</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= VOCAB JOURNAL ============================= -->
+<section class="section" id="vocab-journal">
+  <div class="container">
+    <div class="section-eyebrow">Build Your Word Bank</div>
+    <h2 class="section-title">Vocabulary Journal</h2>
+    <p class="section-intro">Every new word you collect across all 12 weeks lives here — from the lessons, or from your own week in England. Click any cell to edit it.</p>
+    <div class="vocab-table-wrap">
+      <table class="vocab-table" id="vocab-table">
+        <thead><tr><th style="width:18%;">Word</th><th style="width:27%;">Meaning</th><th style="width:27%;">Example</th><th style="width:24%;">My Sentence</th><th style="width:4%;"></th></tr></thead>
+        <tbody id="vocab-tbody"></tbody>
+      </table>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-ghost btn-sm" onclick="addVocabRow()">+ Add a word</button>
+      <button class="btn btn-ghost btn-sm" onclick="addWeek1Vocab()">+ Add this week's 5 words</button>
+      <button class="btn btn-primary btn-sm" onclick="saveVocabJournal()">Save journal</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= REFLECTION JOURNAL ============================= -->
+<section class="section section-alt" id="reflection-journal">
+  <div class="container">
+    <div class="section-eyebrow">A Private Space</div>
+    <h2 class="section-title">Reflection Journal</h2>
+    <p class="section-intro">A free-writing space for anything on your mind about life here — separate from the weekly questions inside each module. Only visible to you, on this device.</p>
+    <div class="card">
+      <textarea id="journal-new" placeholder="Write freely — in full sentences or just notes..."></textarea>
+      <div class="btn-row"><button class="btn btn-primary btn-sm" onclick="addJournalEntry()">Save entry</button></div>
+    </div>
+    <div id="journal-list" style="margin-top:20px;"></div>
+  </div>
+</section>
+
+<!-- ============================= JOURNEY MAP ============================= -->
+<section class="section" id="journey">
+  <div class="container">
+    <div class="section-eyebrow">The Road Ahead</div>
+    <h2 class="section-title">Your Journey</h2>
+    <p class="section-intro">Twelve weeks, twelve real-life themes. Week 1 is fully open below — the rest of your journey unlocks as Teacher Benny builds out the next phase of your programme.</p>
+    <div class="journey-track">
+      <div class="journey-grid" id="journey-grid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= WEEK 1 MODULE ============================= -->
+<section class="week-module" id="week1">
+  <div class="container">
+    <div class="week-banner">
+      <div class="wb-eyebrow">Week 1 of 12</div>
+      <h2>Settling Into England</h2>
+      <p>Your first weeks in a new country are a mix of small victories and small frustrations — a letter you finally understand, a form you finally finish, a neighbour who finally remembers your name. This week is about the everyday language of settling in: registering for things, making sense of British paperwork, and getting through those slightly overwhelming first conversations.</p>
+      <div class="week-progress-wrap">
+        <div class="week-progress-label"><span>Week 1 progress</span><span id="w1-progress-text">0%</span></div>
+        <div class="week-progress-track"><div class="week-progress-fill" id="w1-progress-fill" style="width:0%;"></div></div>
+      </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div class="part open" id="part-1">
+      <button class="part-header" onclick="toggleAccordion(1)">
+        <div class="part-num">1</div>
+        <div class="part-headtext"><div class="pt-label">Part One</div><h3>This Week in England</h3></div>
+        <div class="part-chevron">▾</div>
+      </button>
+      <div class="part-body"><div class="part-body-inner">
+        <p style="color:var(--ink-soft);">A few minutes of honest reflection before we start — there are no wrong answers here.</p>
+
+        <div class="reflect-q">
+          <div class="rq-text">What was the best thing that happened to you this week?</div>
+          <textarea data-key="w1-r1" onblur="saveField(this)"></textarea>
+        </div>
+        <div class="reflect-q">
+          <div class="rq-text">What was difficult or confusing this week?</div>
+          <textarea data-key="w1-r2" onblur="saveField(this)"></textarea>
+        </div>
+        <div class="reflect-q">
+          <div class="rq-text">What surprised you about life here so far?</div>
+          <textarea data-key="w1-r3" onblur="saveField(this)"></textarea>
+        </div>
+        <div class="reflect-q">
+          <div class="rq-text">What new word or phrase did you pick up this week — and where did you hear it?</div>
+          <textarea data-key="w1-r4" onblur="saveField(this)"></textarea>
+        </div>
+
+        <div class="part-complete-row"><label><input type="checkbox" data-part="1" onchange="updatePartComplete(this)"> Mark Part 1 as complete</label></div>
+      </div></div>
+    </div>
+
+    <!-- PART 2 -->
+    <div class="part" id="part-2">
+      <button class="part-header" onclick="toggleAccordion(2)">
+        <div class="part-num">2</div>
+        <div class="part-headtext"><div class="pt-label">Part Two</div><h3>Vocabulary Upgrade</h3></div>
+        <div class="part-chevron">▾</div>
+      </button>
+      <div class="part-body"><div class="part-body-inner">
+        <p style="color:var(--ink-soft);">Five words you'll meet again and again in your first weeks here.</p>
+        <div class="vword-grid">
+
+          <div class="vword-card">
+            <div class="vword-head"><span class="vw-term">settle in</span><span class="vw-pos">phrasal verb</span></div>
+            <div class="vw-def">To become comfortable in a new place, job, or routine.</div>
+            <div class="vw-ex">"It took Marek about a month to settle in after moving to Leeds."</div>
+            <div class="vw-personal"><label>How long do you think it will take you to settle in here?</label><input type="text" data-key="w1-v1" onblur="saveField(this)"></div>
+          </div>
+
+          <div class="vword-card">
+            <div class="vword-head"><span class="vw-term">paperwork</span><span class="vw-pos">noun</span></div>
+            <div class="vw-def">The official documents and forms you need to complete or provide, especially for government offices, banks, or landlords.</div>
+            <div class="vw-ex">"There's always more paperwork than you expect when you open a bank account in the UK."</div>
+            <div class="vw-personal"><label>What paperwork have you had to deal with since arriving?</label><input type="text" data-key="w1-v2" onblur="saveField(this)"></div>
+          </div>
+
+          <div class="vword-card">
+            <div class="vword-head"><span class="vw-term">register</span><span class="vw-pos">verb</span></div>
+            <div class="vw-def">To put your name on an official list so a service has your details — for example, with a doctor or for council tax.</div>
+            <div class="vw-ex">"You should register with a GP as soon as you move to a new area."</div>
+            <div class="vw-personal"><label>Have you registered with a doctor, dentist, or council yet? What was it like?</label><input type="text" data-key="w1-v3" onblur="saveField(this)"></div>
+          </div>
+
+          <div class="vword-card">
+            <div class="vword-head"><span class="vw-term">council</span><span class="vw-pos">noun</span></div>
+            <div class="vw-def">The local government body responsible for services in your area, such as bin collection, schools, and council tax.</div>
+            <div class="vw-ex">"I called the council to ask about bin collection days."</div>
+            <div class="vw-personal"><label>Do you know which council area you live in?</label><input type="text" data-key="w1-v4" onblur="saveField(this)"></div>
+          </div>
+
+          <div class="vword-card">
+            <div class="vword-head"><span class="vw-term">overwhelmed</span><span class="vw-pos">adjective</span></div>
+            <div class="vw-def">Feeling like you have too many things to deal with at once, often causing stress.</div>
+            <div class="vw-ex">"Between the new job, the flat, and the paperwork, she felt completely overwhelmed in her first week."</div>
+            <div class="vw-personal"><label>Have you felt overwhelmed since arriving? What helped?</label><input type="text" data-key="w1-v5" onblur="saveField(this)"></div>
+          </div>
+
+        </div>
+        <div class="part-complete-row"><label><input type="checkbox" data-part="2" onchange="updatePartComplete(this)"> Mark Part 2 as complete</label></div>
+      </div></div>
+    </div>
+
+    <!-- PART 3 -->
+    <div class="part" id="part-3">
+      <button class="part-header" onclick="toggleAccordion(3)">
+        <div class="part-num">3</div>
+        <div class="part-headtext"><div class="pt-label">Part Three</div><h3>British Expressions</h3></div>
+        <div class="part-chevron">▾</div>
+      </button>
+      <div class="part-body"><div class="part-body-inner">
+        <p style="color:var(--ink-soft);">Five everyday phrases you'll hear before you ever open a textbook.</p>
+
+        <div class="expr-card">
+          <div class="expr-phrase">"Mustn't grumble"</div>
+          <div class="expr-row"><strong>Meaning:</strong> A typically understated British way of saying things are okay, even if not perfect — used instead of complaining.</div>
+          <div class="expr-row"><strong>Example:</strong> "How's the new flat?" "Oh, mustn't grumble — the boiler's a bit temperamental, but it's home."</div>
+          <div class="expr-row"><strong>Usage note:</strong> Said with a slight smile; it signals resilience rather than a real complaint.</div>
+        </div>
+
+        <div class="expr-card">
+          <div class="expr-phrase">"Sorry, after you"</div>
+          <div class="expr-row"><strong>Meaning:</strong> A polite phrase used when letting someone go first — through a door, in a queue, into a lift.</div>
+          <div class="expr-row"><strong>Example:</strong> Two people reach a doorway together: "Sorry, after you." "Oh — thank you."</div>
+          <div class="expr-row"><strong>Usage note:</strong> "Sorry" here isn't an apology — it's a softener, used constantly in British politeness.</div>
+        </div>
+
+        <div class="expr-card">
+          <div class="expr-phrase">"I'll pop to the shop"</div>
+          <div class="expr-row"><strong>Meaning:</strong> To go somewhere quickly and briefly.</div>
+          <div class="expr-row"><strong>Example:</strong> "I'll pop to the shop for some milk, won't be long."</div>
+          <div class="expr-row"><strong>Usage note:</strong> "Pop" suggests something short and casual — very common in everyday speech.</div>
+        </div>
+
+        <div class="expr-card">
+          <div class="expr-phrase">"It's not rocket science"</div>
+          <div class="expr-row"><strong>Meaning:</strong> Something isn't difficult to understand or do.</div>
+          <div class="expr-row"><strong>Example:</strong> "Filling in this form isn't rocket science — just take your time."</div>
+          <div class="expr-row"><strong>Usage note:</strong> Can sound a little impatient if said about someone else's struggle — use it gently.</div>
+        </div>
+
+        <div class="expr-card">
+          <div class="expr-phrase">"Fancy a cuppa?"</div>
+          <div class="expr-row"><strong>Meaning:</strong> An invitation to have a cup of tea, often as a way of offering hospitality or a break.</div>
+          <div class="expr-row"><strong>Example:</strong> A new neighbour knocks: "Fancy a cuppa before you finish unpacking?"</div>
+          <div class="expr-row"><strong>Usage note:</strong> Accepting a "cuppa" is often a small but meaningful step toward being welcomed by someone.</div>
+        </div>
+
+        <div class="part-complete-row"><label><input type="checkbox" data-part="3" onchange="updatePartComplete(this)"> Mark Part 3 as complete</label></div>
+      </div></div>
+    </div>
+
+    <!-- PART 4 -->
+    <div class="part" id="part-4">
+      <button class="part-header" onclick="toggleAccordion(4)">
+        <div class="part-num">4</div>
+        <div class="part-headtext"><div class="pt-label">Part Four</div><h3>Reading Corner</h3></div>
+        <div class="part-chevron">▾</div>
+      </button>
+      <div class="part-body"><div class="part-body-inner">
+        <div class="reading-card">
+          <div class="reading-title">Two Letters and a Cup of Tea</div>
+          <div class="reading-byline">An England Life reading text</div>
+          <div class="reading-text">
+            <p>Diego had been in Sheffield for eleven days when the second letter arrived. The first had been from the council, welcoming him to the area and asking him to register for council tax within twenty-one days. He had read it three times before he understood what was actually being asked of him. The second letter looked almost identical — same window envelope, same slightly threatening typeface — but this one was from his bank, asking him to confirm his address. He left both letters on the kitchen table, next to a half-unpacked box of kitchen utensils, and felt, for the first time since landing at Manchester Airport, completely overwhelmed.</p>
+            <p>It wasn't that any single task was difficult. Registering with a GP had taken him fifteen minutes online. Opening a bank account had taken an afternoon, mostly spent waiting. But the tasks kept arriving in pairs and triples, each one slightly different from what he'd expected, each one written in a tone of voice he couldn't quite place — formal, but oddly friendly; serious, but with the occasional joke buried in a sentence about bin collection days. Back home, paperwork had a certain rhythm he understood instinctively. Here, even the rhythm felt foreign.</p>
+            <p>He was still staring at the letters when there was a knock at the door. His neighbour, a woman in her sixties named Pam, stood on the step holding a tin of biscuits.</p>
+            <p>"You're the new one in number four, aren't you? Settling in alright?"</p>
+            <p>"Mustn't grumble," Diego said, trying out the phrase he'd heard a colleague use that morning. It felt strange in his mouth, like borrowed clothes.</p>
+            <p>Pam laughed properly at that, which surprised him. "Very good. You'll fit right in." She glanced past him at the kitchen table. "Council tax form, is it? Don't worry about that today — go and register tomorrow, it'll still be there. Fancy a cuppa first?"</p>
+            <p>He hesitated, the way he always did when an invitation arrived faster than he expected, and then said yes. Twenty minutes later, sitting in his half-furnished living room with a mug he didn't recognise and a biscuit he'd never tasted, Diego found himself talking — properly talking, not just answering questions — about his old flat, the weather, the strange politeness of a man at the post office who had said "sorry, after you" to him twice in one queue.</p>
+            <p>"That's just how it works here," Pam said. "Everyone's terribly sorry about everything, and nobody's actually apologising for anything." She tapped the council letter on the table. "Same with that, really. Looks worse than it is. Most things do."</p>
+            <p>By the time she left, the letters hadn't moved, but something else had shifted slightly. Diego registered for council tax online the next morning — it took six minutes — and replied to the bank by lunchtime. Neither task had become easier. He had simply stopped facing them alone.</p>
+          </div>
+
+          <div class="sub-h">Vocabulary matching</div>
+          <p style="font-size:14px; color:var(--ink-soft);">Match each word from the text to its meaning.</p>
+          <div class="match-grid" id="match-grid"></div>
+
+          <div class="sub-h">Comprehension questions</div>
+          <div class="qa-block"><div class="qa-q">1. Why did Diego feel overwhelmed, even though no single task was very difficult?</div><textarea data-key="w1-c1" onblur="saveField(this)"></textarea></div>
+          <div class="qa-block"><div class="qa-q">2. What did Pam say about the council tax letter that helped Diego feel calmer?</div><textarea data-key="w1-c2" onblur="saveField(this)"></textarea></div>
+          <div class="qa-block"><div class="qa-q">3. What does Pam mean when she says "everyone's terribly sorry about everything, and nobody's actually apologising for anything"?</div><textarea data-key="w1-c3" onblur="saveField(this)"></textarea></div>
+
+          <div class="sub-h">Discussion questions</div>
+          <div class="qa-block"><div class="qa-q">1. Has anyone "popped round" or unexpectedly helped you since you arrived? What happened?</div><textarea data-key="w1-d1" onblur="saveField(this)"></textarea></div>
+          <div class="qa-block"><div class="qa-q">2. Diego says paperwork at home had a rhythm he understood instinctively. What's different about paperwork in England, for you?</div><textarea data-key="w1-d2" onblur="saveField(this)"></textarea></div>
+        </div>
+        <div class="part-complete-row"><label><input type="checkbox" data-part="4" onchange="updatePartComplete(this)"> Mark Part 4 as complete</label></div>
+      </div></div>
+    </div>
+
+    <!-- PART 5 -->
+    <div class="part" id="part-5">
+      <button class="part-header" onclick="toggleAccordion(5)">
+        <div class="part-num">5</div>
+        <div class="part-headtext"><div class="pt-label">Part Five</div><h3>Grammar Upgrade</h3></div>
+        <div class="part-chevron">▾</div>
+      </button>
+      <div class="part-body"><div class="part-body-inner">
+        <h4 style="font-size:17px;">Present Simple &amp; Third Person Singular</h4>
+        <div class="grammar-explain">
+          <p style="margin-bottom:10px;">We use the <strong>present simple</strong> for facts, routines, and things that are generally true — exactly the kind of sentences you need to describe your new life. With <strong>he / she / it</strong>, the verb takes an extra ending.</p>
+          <table class="grammar-table">
+            <tr><th>Subject</th><th>Verb form</th><th>Example</th></tr>
+            <tr><td>I / you / we / they</td><td>base form</td><td>I register online.</td></tr>
+            <tr><td>he / she / it</td><td>+ -s / -es</td><td>She registers online.</td></tr>
+          </table>
+          <p style="margin-bottom:6px;"><strong>Spelling rules for he/she/it:</strong></p>
+          <p style="margin-bottom:4px;">— Most verbs: add <strong>-s</strong> → live → lives, work → works</p>
+          <p style="margin-bottom:4px;">— Verbs ending -s, -ss, -sh, -ch, -x, -o: add <strong>-es</strong> → watch → watches, go → goes</p>
+          <p style="margin-bottom:0;">— Verbs ending consonant + y: change y → i, add -es → worry → worries. Irregular: have → has.</p>
+        </div>
+
+        <div class="sub-h">Practice: complete the sentence</div>
+        <div class="fillblank-row"><span>1. The council </span><input type="text" data-correct="collects" id="fb1"><span> the bins every Tuesday. (collect)</span><button class="btn btn-ghost fb-check" onclick="checkBlank('fb1')">Check</button><span class="fb-feedback" id="fb1-fb"></span></div>
+        <div class="fillblank-row"><span>2. My neighbour always </span><input type="text" data-correct="watches" id="fb2"><span> for the postman. (watch)</span><button class="btn btn-ghost fb-check" onclick="checkBlank('fb2')">Check</button><span class="fb-feedback" id="fb2-fb"></span></div>
+        <div class="fillblank-row"><span>3. She </span><input type="text" data-correct="has" id="fb3"><span> an appointment with the GP tomorrow. (have)</span><button class="btn btn-ghost fb-check" onclick="checkBlank('fb3')">Check</button><span class="fb-feedback" id="fb3-fb"></span></div>
+        <div class="fillblank-row"><span>4. He </span><input type="text" data-correct="worries" id="fb4"><span> about his English on the phone. (worry)</span><button class="btn btn-ghost fb-check" onclick="checkBlank('fb4')">Check</button><span class="fb-feedback" id="fb4-fb"></span></div>
+
+        <div class="sub-h">Your turn</div>
+        <p style="font-size:14px; color:var(--ink-soft); margin-bottom:8px;">Write three present simple sentences about your own new routine in England (e.g. "I register..." / "My landlord calls...").</p>
+        <textarea data-key="w1-g1" onblur="saveField(this)" placeholder="1) ...&#10;2) ...&#10;3) ..."></textarea>
+
+        <div class="part-complete-row"><label><input type="checkbox" data-part="5" onchange="updatePartComplete(this)"> Mark Part 5 as complete</label></div>
+      </div></div>
+    </div>
+
+    <!-- PART 6 -->
+    <div class="part" id="part-6">
+      <button class="part-header" onclick="toggleAccordion(6)">
+        <div class="part-num">6</div>
+        <div class="part-headtext"><div class="pt-label">Part Six</div><h3>Speaking Lab</h3></div>
+        <div class="part-chevron">▾</div>
+      </button>
+      <div class="part-body"><div class="part-body-inner">
+        <div class="speak-card">
+          <h4>Discussion: the postcard test</h4>
+          <p>Imagine writing a postcard home about your first week in England. You only have room for three details. Say them out loud (to a partner, a tutor, or even your phone). What three details would you choose, and why those three?</p>
+        </div>
+
+        <div class="speak-card">
+          <h4>Roleplay: at the GP reception</h4>
+          <p>Practise registering as a new patient with a partner. Swap roles afterwards.</p>
+          <div class="role-cards">
+            <div class="role-card"><strong>Role A — New patient</strong>You've just moved to the area. Explain that you'd like to register, give your name, address, and date of birth, and ask what happens next.</div>
+            <div class="role-card"><strong>Role B — Receptionist</strong>Greet the patient, ask for their details, explain they need to complete a form, and tell them roughly how long registration takes.</div>
+          </div>
+        </div>
+
+        <div class="speak-card">
+          <h4>Partner activity: the settling-in interview</h4>
+          <p>Take turns interviewing each other for two minutes each. Interviewer's questions: What's been the easiest part of settling in? What's been the hardest? What's one thing you'd tell someone arriving next week?</p>
+        </div>
+
+        <div class="speak-card">
+          <h4>Real-life simulation: say it fast</h4>
+          <p>One of the first hurdles in England is saying your own address and date of birth quickly and clearly — on the phone, at a reception desk, in a queue. Practise saying both out loud, three times, at a natural conversational speed, until they stop feeling like a performance.</p>
+        </div>
+
+        <div class="part-complete-row"><label><input type="checkbox" data-part="6" onchange="updatePartComplete(this)"> Mark Part 6 as complete</label></div>
+      </div></div>
+    </div>
+
+    <!-- PART 7 -->
+    <div class="part" id="part-7">
+      <button class="part-header" onclick="toggleAccordion(7)">
+        <div class="part-num">7</div>
+        <div class="part-headtext"><div class="pt-label">Part Seven</div><h3>Living in England</h3></div>
+        <div class="part-chevron">▾</div>
+      </button>
+      <div class="part-body"><div class="part-body-inner">
+        <p style="color:var(--ink-soft);">A few cultural notes that help first encounters go more smoothly.</p>
+        <div class="culture-grid">
+          <div class="culture-card"><span class="cc-icon">🚶</span><h4>Queueing</h4><p>Queues form almost automatically in England, even where there's no rope or sign. Joining the back of one — and never pushing in — is taken seriously, far more than the politeness of any words you say.</p></div>
+          <div class="culture-card"><span class="cc-icon">💬</span><h4>"How are you?" as greeting</h4><p>Often it's not a real question. The expected reply is short and positive — "Fine, thanks, you?" — even on an average day. Save the honest, detailed answer for someone who already knows you well.</p></div>
+          <div class="culture-card"><span class="cc-icon">🌦</span><h4>Weather small talk</h4><p>Commenting on the weather is a safe, almost universal way to start a short conversation with a stranger — a shop assistant, a neighbour, someone waiting for a bus.</p></div>
+          <div class="culture-card"><span class="cc-icon">🚪</span><h4>Neighbour culture</h4><p>Not every neighbour will knock with biscuits, but a polite nod, a quick "morning," or remembering bin day are all small ways of signalling that you're a good neighbour.</p></div>
+        </div>
+        <div class="part-complete-row"><label><input type="checkbox" data-part="7" onchange="updatePartComplete(this)"> Mark Part 7 as complete</label></div>
+      </div></div>
+    </div>
+
+    <!-- PART 8 -->
+    <div class="part" id="part-8">
+      <button class="part-header" onclick="toggleAccordion(8)">
+        <div class="part-num">8</div>
+        <div class="part-headtext"><div class="pt-label">Part Eight</div><h3>Weekly Mission</h3></div>
+        <div class="part-chevron">▾</div>
+      </button>
+      <div class="part-body"><div class="part-body-inner">
+        <div class="mission-card">
+          <h4>This week's real-world challenge</h4>
+          <div class="mission-title">Speak to one stranger</div>
+          <p>Not a long conversation — just one. Choose a low-pressure setting and use at least one phrase or word from this week.</p>
+          <ul class="mission-checklist">
+            <li><input type="checkbox" data-mkey="w1-m1" onchange="saveMissionCheck(this)"> Choose your setting (a shop, a café, a bus stop, a dog walk)</li>
+            <li><input type="checkbox" data-mkey="w1-m2" onchange="saveMissionCheck(this)"> Decide on one opening line in advance (e.g. a weather comment)</li>
+            <li><input type="checkbox" data-mkey="w1-m3" onchange="saveMissionCheck(this)"> Have the conversation — even ten seconds counts</li>
+            <li><input type="checkbox" data-mkey="w1-m4" onchange="saveMissionCheck(this)"> Write a short reflection below</li>
+          </ul>
+          <textarea data-key="w1-mission-reflect" onblur="saveField(this)" placeholder="What happened? How did it feel before, during, and after?"></textarea>
+        </div>
+        <div class="part-complete-row"><label><input type="checkbox" data-part="8" onchange="updatePartComplete(this)"> Mark Part 8 as complete</label></div>
+      </div></div>
+    </div>
+
+    <!-- PART 9 -->
+    <div class="part" id="part-9">
+      <button class="part-header" onclick="toggleAccordion(9)">
+        <div class="part-num">9</div>
+        <div class="part-headtext"><div class="pt-label">Part Nine</div><h3>Self-Study Extension</h3></div>
+        <div class="part-chevron">▾</div>
+      </button>
+      <div class="part-body"><div class="part-body-inner">
+        <div class="selfstudy-grid">
+          <div class="ss-card">
+            <h4>Vocabulary review</h4>
+            <p style="font-size:13.5px; color:var(--ink-soft); margin-bottom:10px;">Without looking back, write what you remember about each word.</p>
+            <div class="recall-row"><span>settle in</span><input type="text" data-key="w1-rev1" onblur="saveField(this)" placeholder="meaning?"></div>
+            <div class="recall-row"><span>paperwork</span><input type="text" data-key="w1-rev2" onblur="saveField(this)" placeholder="meaning?"></div>
+            <div class="recall-row"><span>register</span><input type="text" data-key="w1-rev3" onblur="saveField(this)" placeholder="meaning?"></div>
+            <div class="recall-row"><span>council</span><input type="text" data-key="w1-rev4" onblur="saveField(this)" placeholder="meaning?"></div>
+            <div class="recall-row"><span>overwhelmed</span><input type="text" data-key="w1-rev5" onblur="saveField(this)" placeholder="meaning?"></div>
+          </div>
+          <div class="ss-card">
+            <h4>Writing task</h4>
+            <p style="font-size:13.5px; color:var(--ink-soft); margin-bottom:10px;">Write a 100–150 word diary entry about your first week in England.</p>
+            <textarea data-key="w1-writing" onblur="saveField(this)" style="min-height:140px;"></textarea>
+          </div>
+          <div class="ss-card">
+            <h4>Reflection task</h4>
+            <p style="font-size:13.5px; color:var(--ink-soft); margin-bottom:10px;">What is one thing you understand better about life here than you did seven days ago?</p>
+            <textarea data-key="w1-finalreflect" onblur="saveField(this)"></textarea>
+          </div>
+          <div class="ss-card">
+            <h4>Listening recommendation</h4>
+            <p style="font-size:13.5px; color:var(--ink-soft); margin-bottom:10px;">A few places to hear natural English this week:</p>
+            <ul class="listen-list">
+              <li>BBC Learning English — "The English We Speak" (short, everyday phrases)</li>
+              <li>British Council — LearnEnglish podcasts</li>
+              <li>Easy English UK — street interviews with real British people</li>
+              <li>Any UK news podcast, just for five minutes of background listening</li>
+            </ul>
+          </div>
+        </div>
+        <div class="part-complete-row"><label><input type="checkbox" data-part="9" onchange="updatePartComplete(this)"> Mark Part 9 as complete</label></div>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================= CERTIFICATE ============================= -->
+<section class="section section-alt" id="certificate">
+  <div class="container">
+    <div class="section-eyebrow" style="text-align:center;">Looking Ahead</div>
+    <h2 class="section-title" style="text-align:center;">Your Certificate</h2>
+    <p class="section-intro center">This unlocks fully once all twelve weeks are complete — here's a preview of what's waiting for you.</p>
+    <div class="certificate-wrap">
+      <div class="certificate">
+        <div class="cert-eyebrow">Teacher Benny Presents</div>
+        <div class="cert-title">England Life</div>
+        <div class="cert-sub">Communication, Confidence &amp; Integration</div>
+        <div class="cert-name" id="cert-name">Your name here</div>
+        <div class="cert-body">has completed the England Life 12-week coaching programme, building real confidence and communication skills for life in the UK.</div>
+        <div class="cert-progress" id="cert-progress">1 of 12 weeks complete</div>
+        <div class="cert-date" id="cert-date"></div>
+      </div>
+    </div>
+    <div class="btn-row" style="justify-content:center;">
+      <button class="btn btn-secondary" onclick="window.print()">Print / Save preview</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">England Life — a coaching programme by <strong>Teacher Benny</strong>. Your answers are saved privately on this device only.</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================= STORAGE HELPERS ============================= */
+function scrollToSection(id){
+  const el = document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+}
+function getJSON(key, fallback){
+  try{ const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; }
+  catch(e){ return fallback; }
+}
+function setJSON(key, val){ localStorage.setItem(key, JSON.stringify(val)); }
+
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(()=>t.classList.remove('show'), 2200);
+}
+
+/* generic field save (textareas/inputs with data-key) */
+function saveField(el){
+  const data = getJSON('EL_fields', {});
+  data[el.dataset.key] = el.value;
+  setJSON('EL_fields', data);
+  showToast('Saved');
+}
+function loadFields(){
+  const data = getJSON('EL_fields', {});
+  document.querySelectorAll('[data-key]').forEach(el=>{
+    if(data[el.dataset.key] !== undefined) el.value = data[el.dataset.key];
+  });
+}
+
+/* ============================= CONFIDENCE SKILLS ============================= */
+const SKILLS = [
+  {key:'strangers', label:'Speaking to strangers'},
+  {key:'smalltalk', label:'Small talk'},
+  {key:'shopping', label:'Shopping'},
+  {key:'phone', label:'Phone calls'},
+  {key:'accents', label:'Understanding accents'},
+  {key:'friends', label:'Making friends'}
+];
+
+function buildBaselineGrid(){
+  const wrap = document.getElementById('baseline-grid');
+  const baseline = getJSON('EL_baseline', {});
+  wrap.innerHTML = SKILLS.map(s=>{
+    const val = baseline[s.key] !== undefined ? baseline[s.key] : 5;
+    return `<div class="slider-card">
+      <div class="slider-top"><strong>${s.label}</strong><span class="slider-value" id="bv-${s.key}">${val}</span></div>
+      <input type="range" min="1" max="10" value="${val}" id="bs-${s.key}" oninput="document.getElementById('bv-${s.key}').textContent=this.value; styleRange(this);">
+    </div>`;
+  }).join('');
+  SKILLS.forEach(s=>styleRange(document.getElementById('bs-'+s.key)));
+}
+function styleRange(el){
+  const pct = ((el.value-1)/9)*100;
+  el.style.background = `linear-gradient(to right, var(--gold) ${pct}%, var(--cream-line) ${pct}%)`;
+}
+function saveBaseline(){
+  const baseline = {};
+  SKILLS.forEach(s=> baseline[s.key] = parseInt(document.getElementById('bs-'+s.key).value));
+  setJSON('EL_baseline', baseline);
+  // if no "current" yet, initialise current = baseline
+  const current = getJSON('EL_current', null);
+  if(!current) setJSON('EL_current', Object.assign({}, baseline));
+  renderDashboard();
+  showToast('Starting point saved');
+}
+
+function renderDashboard(){
+  const baseline = getJSON('EL_baseline', null);
+  const grid = document.getElementById('dashboard-grid');
+  const summary = document.getElementById('dash-summary');
+  if(!baseline){
+    grid.innerHTML = '<p style="color:var(--ink-soft); grid-column:1/-1;">Save your confidence baseline in the Welcome section above to activate this dashboard.</p>';
+    summary.textContent = '';
+    return;
+  }
+  const current = getJSON('EL_current', baseline);
+  let totalDelta = 0;
+  grid.innerHTML = SKILLS.map(s=>{
+    const b = baseline[s.key] !== undefined ? baseline[s.key] : 5;
+    const c = current[s.key] !== undefined ? current[s.key] : b;
+    const delta = c - b;
+    totalDelta += delta;
+    let badgeClass = 'delta-flat', sign='';
+    if(delta>0){badgeClass='delta-up'; sign='+';}
+    if(delta<0){badgeClass='delta-down';}
+    return `<div class="skill-card">
+      <div class="skill-name">${s.label}</div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width:${b*10}%;"></div></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill now" style="width:${c*10}%;"></div></div>
+      <div class="skill-meta"><span>Start: ${b}/10</span><span>Now: ${c}/10</span><span class="delta-badge ${badgeClass}">${sign}${delta}</span></div>
+      <div class="dash-update-row">
+        <input type="range" min="1" max="10" value="${c}" id="cs-${s.key}" oninput="liveUpdateCurrent('${s.key}', this.value)">
+        <div style="text-align:right; font-size:12.5px; color:var(--ink-soft); margin-top:2px;">Dragging to: <strong id="csv-${s.key}" style="color:var(--navy);">${c}</strong>/10 (click "Update my confidence" to save)</div>
+      </div>
+    </div>`;
+  }).join('');
+  SKILLS.forEach(s=>{ const el = document.getElementById('cs-'+s.key); if(el) styleRange(el); });
+  const avg = (totalDelta / SKILLS.length).toFixed(1);
+  summary.textContent = avg > 0 ? `On average, your confidence has grown by ${avg} points since you started.` : (avg < 0 ? `Your average has dipped slightly — that's normal some weeks.` : `Update the sliders above as your confidence grows.`);
+}
+function liveUpdateCurrent(key, val){
+  const span = document.getElementById('csv-'+key);
+  if(span) span.textContent = val;
+  styleRange(document.getElementById('cs-'+key));
+}
+function saveCurrent(){
+  const baseline = getJSON('EL_baseline', null);
+  if(!baseline){ showToast('Save your baseline first'); return; }
+  const current = {};
+  SKILLS.forEach(s=>{
+    const el = document.getElementById('cs-'+s.key);
+    current[s.key] = el ? parseInt(el.value) : baseline[s.key];
+  });
+  setJSON('EL_current', current);
+  renderDashboard();
+  showToast('Confidence updated');
+}
+
+/* ============================= VOCAB JOURNAL ============================= */
+function renderVocabTable(){
+  const rows = getJSON('EL_vocabJournal', []);
+  const tbody = document.getElementById('vocab-tbody');
+  tbody.innerHTML = rows.map((r,i)=>vocabRowHTML(r,i)).join('');
+}
+function vocabRowHTML(r,i){
+  return `<tr data-row="${i}">
+    <td><input type="text" value="${escapeHtml(r.word||'')}" onblur="syncVocabRow(${i})" data-f="word"></td>
+    <td><textarea onblur="syncVocabRow(${i})" data-f="meaning">${escapeHtml(r.meaning||'')}</textarea></td>
+    <td><textarea onblur="syncVocabRow(${i})" data-f="example">${escapeHtml(r.example||'')}</textarea></td>
+    <td><textarea onblur="syncVocabRow(${i})" data-f="sentence">${escapeHtml(r.sentence||'')}</textarea></td>
+    <td><button class="row-del" onclick="deleteVocabRow(${i})">✕</button></td>
+  </tr>`;
+}
+function escapeHtml(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function syncVocabRow(i){
+  const rows = getJSON('EL_vocabJournal', []);
+  const tr = document.querySelector(`tr[data-row="${i}"]`);
+  if(!tr || !rows[i]) return;
+  rows[i].word = tr.querySelector('[data-f="word"]').value;
+  rows[i].meaning = tr.querySelector('[data-f="meaning"]').value;
+  rows[i].example = tr.querySelector('[data-f="example"]').value;
+  rows[i].sentence = tr.querySelector('[data-f="sentence"]').value;
+  setJSON('EL_vocabJournal', rows);
+}
+function addVocabRow(){
+  const rows = getJSON('EL_vocabJournal', []);
+  rows.push({word:'',meaning:'',example:'',sentence:''});
+  setJSON('EL_vocabJournal', rows);
+  renderVocabTable();
+}
+function deleteVocabRow(i){
+  const rows = getJSON('EL_vocabJournal', []);
+  rows.splice(i,1);
+  setJSON('EL_vocabJournal', rows);
+  renderVocabTable();
+}
+function addWeek1Vocab(){
+  const rows = getJSON('EL_vocabJournal', []);
+  const w1 = [
+    {word:'settle in', meaning:'to become comfortable in a new place, job or routine', example:'It took Marek about a month to settle in.', sentence:''},
+    {word:'paperwork', meaning:'official documents and forms you need to complete', example:"There's always more paperwork than you expect.", sentence:''},
+    {word:'register', meaning:'to put your name on an official list', example:'You should register with a GP as soon as you move.', sentence:''},
+    {word:'council', meaning:'the local government body responsible for local services', example:'I called the council about bin collection.', sentence:''},
+    {word:'overwhelmed', meaning:'feeling like you have too many things to deal with at once', example:'She felt completely overwhelmed in her first week.', sentence:''}
+  ];
+  setJSON('EL_vocabJournal', rows.concat(w1));
+  renderVocabTable();
+  showToast("Added this week's words");
+}
+function saveVocabJournal(){
+  // forces a sync of any focused-but-unblurred field, then confirms
+  showToast('Vocabulary journal saved');
+}
+
+/* ============================= REFLECTION JOURNAL ============================= */
+function renderJournal(){
+  const entries = getJSON('EL_reflectionJournal', []);
+  const list = document.getElementById('journal-list');
+  if(entries.length===0){ list.innerHTML = '<p class="journal-empty">No entries yet — your first one is just above.</p>'; return; }
+  list.innerHTML = entries.slice().reverse().map((e)=>{
+    const realIndex = entries.indexOf(e);
+    return `<div class="journal-entry"><span class="journal-date">${e.date}</span><p style="margin:0; white-space:pre-wrap;">${escapeHtml(e.text)}</p><button class="journal-del" onclick="deleteJournalEntry(${realIndex})">Delete</button></div>`;
+  }).join('');
+}
+function addJournalEntry(){
+  const ta = document.getElementById('journal-new');
+  if(!ta.value.trim()) return;
+  const entries = getJSON('EL_reflectionJournal', []);
+  entries.push({date: new Date().toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'numeric'}), text: ta.value.trim()});
+  setJSON('EL_reflectionJournal', entries);
+  ta.value='';
+  renderJournal();
+  showToast('Entry saved');
+}
+function deleteJournalEntry(i){
+  const entries = getJSON('EL_reflectionJournal', []);
+  entries.splice(i,1);
+  setJSON('EL_reflectionJournal', entries);
+  renderJournal();
+}
+
+/* ============================= ACCORDION / PART COMPLETION ============================= */
+function toggleAccordion(n){
+  document.getElementById('part-'+n).classList.toggle('open');
+}
+const WEEK1_PARTS = 9;
+function updatePartComplete(checkbox){
+  const parts = getJSON('EL_week1Parts', {});
+  parts[checkbox.dataset.part] = checkbox.checked;
+  setJSON('EL_week1Parts', parts);
+  updateWeekProgress();
+  updateJourneyMap();
+}
+function loadPartCheckboxes(){
+  const parts = getJSON('EL_week1Parts', {});
+  document.querySelectorAll('[data-part]').forEach(cb=>{
+    if(parts[cb.dataset.part]) cb.checked = true;
+  });
+  updateWeekProgress();
+}
+function updateWeekProgress(){
+  const parts = getJSON('EL_week1Parts', {});
+  const done = Object.values(parts).filter(Boolean).length;
+  const pct = Math.round((done / WEEK1_PARTS) * 100);
+  document.getElementById('w1-progress-fill').style.width = pct + '%';
+  document.getElementById('w1-progress-text').textContent = pct + '%';
+}
+
+/* ============================= MISSION CHECKLIST ============================= */
+function saveMissionCheck(cb){
+  const data = getJSON('EL_missionChecks', {});
+  data[cb.dataset.mkey] = cb.checked;
+  setJSON('EL_missionChecks', data);
+}
+function loadMissionChecks(){
+  const data = getJSON('EL_missionChecks', {});
+  document.querySelectorAll('[data-mkey]').forEach(cb=>{ if(data[cb.dataset.mkey]) cb.checked = true; });
+}
+
+/* ============================= GRAMMAR PRACTICE ============================= */
+function checkBlank(id){
+  const input = document.getElementById(id);
+  const fb = document.getElementById(id+'-fb');
+  const correct = input.dataset.correct.toLowerCase();
+  if(input.value.trim().toLowerCase() === correct){
+    fb.textContent = 'Correct!'; fb.className = 'fb-feedback correct';
+  } else {
+    fb.textContent = `Not quite — try "${input.dataset.correct}"`; fb.className = 'fb-feedback incorrect';
+  }
+}
+
+/* ============================= READING MATCH EXERCISE ============================= */
+const MATCH_WORDS = [
+  {word:'overwhelmed', meaning:'feeling like you have too many things to deal with at once'},
+  {word:'register', meaning:'to put your name on an official list'},
+  {word:'council', meaning:'the local government body responsible for local services'},
+  {word:'settle in', meaning:'to become comfortable in a new place'},
+  {word:'paperwork', meaning:'official documents and forms'}
+];
+function buildMatchExercise(){
+  const wrap = document.getElementById('match-grid');
+  const shuffledMeanings = MATCH_WORDS.map(m=>m.meaning).sort(()=>Math.random()-0.5);
+  wrap.innerHTML = MATCH_WORDS.map((m,i)=>{
+    const options = shuffledMeanings.map(opt=>`<option value="${escapeHtml(opt)}">${escapeHtml(opt)}</option>`).join('');
+    return `<div class="match-row"><strong style="min-width:90px;">${m.word}</strong><select id="match-${i}"><option value="">— choose meaning —</option>${options}</select></div>`;
+  }).join('');
+}
+
+/* ============================= JOURNEY MAP ============================= */
+const PROGRAMME_WEEKS = [
+  {n:1, title:'Settling Into England', status:'active'},
+  {n:2, title:'Small Talk Survival', status:'locked'},
+  {n:3, title:'Shopping & Everyday Services', status:'locked'},
+  {n:4, title:'Making Friends in England', status:'locked'},
+  {n:5, title:'Doctors, Dentists & Emergencies', status:'locked'},
+  {n:6, title:'Confidence Building Week', status:'locked'},
+  {n:7, title:'Understanding British People', status:'locked'},
+  {n:8, title:'Work & Employment', status:'locked'},
+  {n:9, title:'Telephone English', status:'locked'},
+  {n:10, title:'Housing & Neighbours', status:'locked'},
+  {n:11, title:'British Humour & Culture', status:'locked'},
+  {n:12, title:'Independence & Integration', status:'locked'}
+];
+function renderJourneyMap(){
+  const grid = document.getElementById('journey-grid');
+  const parts = getJSON('EL_week1Parts', {});
+  const w1pct = Math.round((Object.values(parts).filter(Boolean).length / WEEK1_PARTS) * 100);
+  grid.innerHTML = PROGRAMME_WEEKS.map(w=>{
+    if(w.status==='active'){
+      return `<div class="week-node active" style="cursor:pointer;" role="link" tabindex="0" onclick="scrollToSection('week1')" onkeydown="if(event.key==='Enter'){scrollToSection('week1')}">
+        <div class="wn-num">${w.n}</div>
+        <div class="wn-title">${w.title}</div>
+        <div class="wn-topic">Open now</div>
+        <div class="week-progress-mini"><div class="week-progress-mini-fill" style="width:${w1pct}%;"></div></div>
+      </div>`;
+    }
+    return `<div class="week-node locked">
+      <div class="wn-num">${w.n}</div>
+      <div class="wn-title">${w.title}</div>
+      <div class="wn-topic">Coming in the next phase</div>
+      <span class="wn-lock">🔒 Locked</span>
+    </div>`;
+  }).join('');
+}
+function updateJourneyMap(){ renderJourneyMap(); }
+
+/* ============================= CERTIFICATE ============================= */
+function renderCertificate(){
+  const parts = getJSON('EL_week1Parts', {});
+  const w1done = Object.values(parts).filter(Boolean).length === WEEK1_PARTS;
+  document.getElementById('cert-progress').textContent = w1done ? '1 of 12 weeks complete' : '0 of 12 weeks complete — keep going!';
+  document.getElementById('cert-date').textContent = 'Preview generated ' + new Date().toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric'});
+}
+
+/* ============================= INIT ============================= */
+window.addEventListener('DOMContentLoaded', ()=>{
+  buildBaselineGrid();
+  renderDashboard();
+  loadFields();
+  renderVocabTable();
+  renderJournal();
+  loadPartCheckboxes();
+  loadMissionChecks();
+  buildMatchExercise();
+  renderJourneyMap();
+  renderCertificate();
+});
+</script>
+</body>
+</html>
